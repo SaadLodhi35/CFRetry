@@ -3,6 +3,8 @@ Description: A sample template to fix & remediate
 Parameters:
   ShardCountParameter:
     Type: Number
+    MinValue: 1
+    MaxValue: 10
     Description: The number of shards for the Kinesis stream
 Resources:
   MyBucket:
@@ -21,8 +23,6 @@ Resources:
         - AttributeName: "ArtistId"
           AttributeType: "S"
         - AttributeName: "Concert"
-          AttributeType: "S"
-        - AttributeName: "TicketSales"
           AttributeType: "S"
       KeySchema:
         - AttributeName: "ArtistId"
